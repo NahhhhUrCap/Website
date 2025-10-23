@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junior Collins | Software Developer Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the futuristic/dark theme */
+        :root {
+            --bg-dark: #0A0A0A;
+            --accent-cyan: #00FFFF;
+            --text-light: #E0E0E0;
+            --card-dark: #1F2937;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            scroll-behavior: smooth;
+        }
+
+        /* Subtle background glow effect for the header area */
+        #hero-section {
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(circle at top, rgba(0, 255, 255, 0.05) 0%, transparent 40%);
+        }
+
+        /* Custom glow effect for the typewriter cursor/accent elements */
+        .glow-text {
+            color: var(--accent-cyan);
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+        }
+
+        .glow-border {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+        
+        /* Typing cursor animation */
+        .typing-text::after {
+            content: '|';
+            display: inline-block;
+            animation: blink 0.7s infinite;
+            color: var(--accent-cyan);
+            margin-left: 2px;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        /* Project Card Hover Effect */
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.1), 0 0 20px rgba(0, 255, 255, 0.2);
+            border-color: var(--accent-cyan);
+        }
+
+        /* Custom Scrollbar for a slicker look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111827;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2563EB;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3B82F6;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-black/80 backdrop-blur-sm shadow-xl shadow-cyan-900/10">
+        <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-extrabold tracking-wider glow-text">JUNIOR COLLINS</a>
+            <div class="space-x-4 hidden md:flex">
+                <a href="#about" class="text-gray-300 hover:glow-text hover:text-white transition duration-200">About</a>
+                <a href="#skills" class="text-gray-300 hover:glow-text hover:text-white transition duration-200">Skills</a>
+                <a href="#projects" class="text-gray-300 hover:glow-text hover:text-white transition duration-200">Projects</a>
+                <a href="#contact" class="px-3 py-1 border border-cyan-500 rounded-full hover:bg-cyan-900/50 glow-border transition duration-300">Contact</a>
+            </div>
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="mobile-menu-button" class="md:hidden text-cyan-500 p-2 rounded-lg hover:bg-gray-800">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/90 p-4 border-t border-cyan-800/50">
+            <a href="#about" class="block py-2 text-gray-300 hover:glow-text">About</a>
+            <a href="#skills" class="block py-2 text-gray-300 hover:glow-text">Skills</a>
+            <a href="#projects" class="block py-2 text-gray-300 hover:glow-text">Projects</a>
+            <a href="#contact" class="block py-2 mt-2 px-3 text-center border border-cyan-500 rounded-lg hover:bg-cyan-900/50 glow-border">Contact</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 lg:px-8">
+
+        <!-- 1. Hero Section -->
+        <section id="hero-section" class="py-24 md:py-36 text-center">
+            <p class="text-xl md:text-2xl text-cyan-400 font-medium mb-4">Hello World, I'm</p>
+            <h1 class="text-6xl md:text-8xl font-black mb-6 leading-tight tracking-tighter">
+                JUNIOR COLLINS
+            </h1>
+            <p id="typewriter-text" class="typing-text text-2xl md:text-4xl font-light text-gray-300 h-10"></p>
+            
+            <div class="mt-12 space-x-4">
+                <a href="#projects" class="inline-block px-8 py-3 bg-cyan-600 text-black font-bold rounded-lg shadow-lg hover:bg-cyan-500 transition duration-300 transform hover:scale-105">
+                    View Portfolio
+                </a>
+                <a href="#contact" class="inline-block px-8 py-3 border-2 border-cyan-600 text-cyan-400 font-bold rounded-lg hover:bg-cyan-900/50 transition duration-300 transform hover:scale-105">
+                    Get In Touch
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. About Section -->
+        <section id="about" class="py-20 border-t border-cyan-800/30">
+            <h2 class="text-4xl font-bold mb-10 text-center glow-text">About Me</h2>
+            <div class="max-w-3xl mx-auto bg-gray-900/70 p-8 rounded-xl shadow-2xl glow-border border border-cyan-900/50">
+                <p class="text-lg leading-relaxed mb-4">
+                    I'm Junior Collins, an enthusiastic **Entry-Level Software Developer** with a passion for building scalable and user-centric applications. I specialize in the modern web stack, turning complex problems into elegant, functional code.
+                </p>
+                <p class="text-lg leading-relaxed">
+                    My background in computer science has equipped me with a strong foundation in data structures and algorithms, and I thrive in environments that value continuous learning and collaborative problem-solving. I am currently looking for an opportunity to apply my skills and grow within a forward-thinking tech team.
+                </p>
+                <p class="text-sm mt-6 text-gray-500 text-right">
+                    — Code is poetry, and I'm ready to write the next stanza.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. Skills Section -->
+        <section id="skills" class="py-20 border-t border-cyan-800/30">
+            <h2 class="text-4xl font-bold mb-10 text-center glow-text">Core Skills & Tech Stack</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-5xl mx-auto">
+                
+                <!-- Skill Badge Template -->
+                <div class="skill-badge flex flex-col items-center p-4 bg-gray-900 rounded-xl transition duration-300 hover:bg-cyan-900/40 hover:scale-105 border border-transparent hover:border-cyan-700/50">
+                    <svg class="w-8 h-8 text-cyan-400 mb-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.303 3.018l.831 9.873 6.866 2.059 6.866-2.059.831-9.873H4.303zm13.116 1.132l-.462 5.485-3.321 1.002v-5.003h3.783zm-7.07 1.001v5.003l-3.32-1.002-.463-5.485h3.783zM4.772 1.88h14.456l-1.041 12.378-7.208 2.162-7.208-2.162L4.772 1.88z"/></svg>
+                    <span class="text-sm font-medium text-gray-200">HTML/CSS</span>
+                </div>
+                
+                <div class="skill-badge flex flex-col items-center p-4 bg-gray-900 rounded-xl transition duration-300 hover:bg-cyan-900/40 hover:scale-105 border border-transparent hover:border-cyan-700/50">
+                    <svg class="w-8 h-8 text-cyan-400 mb-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.322 15.34l-.444-2.836-1.57-.45-1.558 2.836 2.072 1.012zm-3.822-4.148l-1.87-2.836 4.39-2.073L12 13.192zM12 4c.325 0 .638.032.938.093L12 4z"/></svg>
+                    <span class="text-sm font-medium text-gray-200">JavaScript</span>
+                </div>
+
+                <div class="skill-badge flex flex-col items-center p-4 bg-gray-900 rounded-xl transition duration-300 hover:bg-cyan-900/40 hover:scale-105 border border-transparent hover:border-cyan-700/50">
+                    <svg class="w-8 h-8 text-cyan-400 mb-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0zm0 4.14C9.53 4.14 7.42 6.25 7.42 8.72c0 1.25.5 2.45 1.34 3.32l3.24 3.24 3.24-3.24c.84-.87 1.34-2.07 1.34-3.32 0-2.47-2.11-4.58-4.58-4.58zM12 20.25c-4.43 0-8.02-3.59-8.02-8.02 0-2.22 1.02-4.27 2.76-5.59l.86.86-1.54 1.54c-.66.66-1.02 1.54-1.02 2.49 0 1.95 1.59 3.54 3.54 3.54 1.25 0 2.37-.65 3.01-1.63l.79-.79.79.79c.64.98 1.76 1.63 3.01 1.63 1.95 0 3.54-1.59 3.54-3.54 0-.95-.36-1.83-1.02-2.49l-1.54-1.54.86-.86c1.74 1.32 2.76 3.37 2.76 5.59 0 4.43-3.59 8.02-8.02 8.02z"/></svg>
+                    <span class="text-sm font-medium text-gray-200">React</span>
+                </div>
+
+                <div class="skill-badge flex flex-col items-center p-4 bg-gray-900 rounded-xl transition duration-300 hover:bg-cyan-900/40 hover:scale-105 border border-transparent hover:border-cyan-700/50">
+                    <svg class="w-8 h-8 text-cyan-400 mb-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.993 17.52c.622-.057 1.21-.19 1.76-.395l-1.125-2.075c-.394.137-.818.21-1.253.21-3.64 0-4.045-2.45-5.26-4.043 2.07-1.467 4.14-1.782 5.922-1.782 4.09 0 5.16 2.5 5.16 4.79 0 2.21-.86 3.86-2.58 4.79-.37.21-.78.36-1.22.46V24l-3.21-2.46c-.5.06-1.01.09-1.52.09-5.74 0-9.69-5.06-9.69-12.01 0-6.95 3.95-12.01 9.69-12.01C17.73 0 21.68 5.06 21.68 12.01c0 2.65-.67 4.96-2.32 6.8-.75.83-1.62 1.5-2.6 2.05L12 24V17.52zM12 4.29c-3.78 0-6.73 3.03-6.73 7.72 0 4.69 2.95 7.72 6.73 7.72s6.73-3.03 6.73-7.72c0-4.69-2.95-7.72-6.73-7.72z"/></svg>
+                    <span class="text-sm font-medium text-gray-200">Node.js</span>
+                </div>
+
+                <div class="skill-badge flex flex-col items-center p-4 bg-gray-900 rounded-xl transition duration-300 hover:bg-cyan-900/40 hover:scale-105 border border-transparent hover:border-cyan-700/50">
+                    <svg class="w-8 h-8 text-cyan-400 mb-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-4.418 0-8 3.582-8 8s3.582 8 8 8c4.418 0 8-3.582 8-8s-3.582-8-8-8zm0 14c-3.313 0-6-2.687-6-6s2.687-6 6-6 6 2.687 6 6-2.687 6-6 6zm0-10c-2.209 0-4 1.791-4 4s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4z"/></svg>
+                    <span class="text-sm font-medium text-gray-200">PostgreSQL</span>
+                </div>
+                
+                <div class="skill-badge flex flex-col items-center p-4 bg-gray-900 rounded-xl transition duration-300 hover:bg-cyan-900/40 hover:scale-105 border border-transparent hover:border-cyan-700/50">
+                    <svg class="w-8 h-8 text-cyan-400 mb-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.5-11.5l-3 3-1.5-1.5L9 11.5l-2 2L8 15l2-2 4-4L14.5 9z"/></svg>
+                    <span class="text-sm font-medium text-gray-200">Git/GitHub</span>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- 4. Projects Section -->
+        <section id="projects" class="py-20 border-t border-cyan-800/30">
+            <h2 class="text-4xl font-bold mb-12 text-center glow-text">Featured Projects</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project Card 1 -->
+                <div class="project-card bg-gray-900/70 p-6 rounded-xl border-2 border-transparent transition duration-300 transform">
+                    <h3 class="text-2xl font-semibold mb-3 glow-text">Cyber-Vault Security App</h3>
+                    <p class="text-gray-400 mb-4 text-sm">React, Node.js, PostgreSQL</p>
+                    <p class="mb-4">
+                        A full-stack password management application featuring end-to-end encryption, built using the MERN stack principles. Focused on security best practices and robust API design.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-cyan-400 hover:text-white transition duration-200 underline">Live Demo</a>
+                        <a href="#" class="text-gray-500 hover:text-white transition duration-200 underline">GitHub Repo</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card bg-gray-900/70 p-6 rounded-xl border-2 border-transparent transition duration-300 transform">
+                    <h3 class="text-2xl font-semibold mb-3 glow-text">Adaptive Dashboard UI</h3>
+                    <p class="text-gray-400 mb-4 text-sm">HTML, Tailwind CSS, Vanilla JS</p>
+                    <p class="mb-4">
+                        Developed a responsive and performance-optimized administrative dashboard interface. Implemented dynamic charting and dark/light mode toggle with custom JS state management.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-cyan-400 hover:text-white transition duration-200 underline">Live Demo</a>
+                        <a href="#" class="text-gray-500 hover:text-white transition duration-200 underline">GitHub Repo</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card bg-gray-900/70 p-6 rounded-xl border-2 border-transparent transition duration-300 transform">
+                    <h3 class="text-2xl font-semibold mb-3 glow-text">AI Image Generator CLI</h3>
+                    <p class="text-gray-400 mb-4 text-sm">Python, OpenAI API, CLI</p>
+                    <p class="mb-4">
+                        A command-line tool for generating images based on user prompts using an external AI API. Focused on clean, efficient code and dependency management.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-cyan-400 hover:text-white transition duration-200 underline">Documentation</a>
+                        <a href="#" class="text-gray-500 hover:text-white transition duration-200 underline">GitHub Repo</a>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-block px-6 py-2 border border-gray-600 text-gray-400 rounded-full hover:bg-gray-800 transition duration-300">
+                    See More on GitHub &rarr;
+                </a>
+            </div>
+        </section>
+
+        <!-- 5. Contact Section -->
+        <section id="contact" class="py-20 border-t border-cyan-800/30">
+            <h2 class="text-4xl font-bold mb-6 text-center glow-text">Connect with Me</h2>
+            <p class="text-xl text-center text-gray-400 mb-10">I'm currently seeking new opportunities and challenges.</p>
+            
+            <div class="max-w-xl mx-auto p-8 bg-gray-900/70 rounded-xl shadow-2xl glow-border border border-cyan-900/50">
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300">Name</label>
+                        <input type="text" id="name" name="name" required class="mt-1 block w-full p-3 border border-gray-700 bg-gray-800 rounded-lg focus:ring-cyan-500 focus:border-cyan-500 text-white">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300">Email</label>
+                        <input type="email" id="email" name="email" required class="mt-1 block w-full p-3 border border-gray-700 bg-gray-800 rounded-lg focus:ring-cyan-500 focus:border-cyan-500 text-white">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-300">Message</label>
+                        <textarea id="message" name="message" rows="4" required class="mt-1 block w-full p-3 border border-gray-700 bg-gray-800 rounded-lg focus:ring-cyan-500 focus:border-cyan-500 text-white"></textarea>
+                    </div>
+                    <button type="submit" class="w-full px-4 py-3 bg-cyan-600 text-black font-bold rounded-lg hover:bg-cyan-500 transition duration-300 shadow-md">
+                        Send Message
+                    </button>
+                    <div id="form-message" class="mt-4 text-center hidden"></div>
+                </form>
+            </div>
+            
+            <div class="flex justify-center space-x-6 mt-10">
+                <a href="mailto:junior.collins@example.com" class="text-2xl text-cyan-400 hover:text-white transition duration-200">
+                    <span title="Email">✉️</span>
+                </a>
+                <a href="https://linkedin.com/in/juniorcollins" target="_blank" class="text-2xl text-cyan-400 hover:text-white transition duration-200">
+                    <svg class="w-6 h-6 inline" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.325-.028-3.047-1.851-3.047-1.852 0-2.136 1.448-2.136 2.956v5.659H9.351V9.414h3.414v1.564h.048c.477-.9 1.637-1.851 3.37-1.851 3.601 0 4.267 2.364 4.267 5.432v6.293zM5.212 7.785A2.522 2.522 0 012.69 5.263a2.522 2.522 0 012.522-2.522 2.522 2.522 0 012.522 2.522 2.522 2.522 0 01-2.522 2.522zm1.782 12.667H3.43V9.414h3.564v11.038z"/></svg>
+                </a>
+                <a href="https://github.com/juniorcollins" target="_blank" class="text-2xl text-cyan-400 hover:text-white transition duration-200">
+                    <svg class="w-6 h-6 inline" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12c6.627 0 12-5.373 12-12S18.627 0 12 0zm6.273 17.803c-.636.576-1.423.864-2.365.864-1.127 0-1.748-.485-2.074-1.455h-3.674c-.326.97-1.002 1.455-2.074 1.455-.942 0-1.729-.288-2.365-.864-.636-.576-.954-1.393-.954-2.45v-4.664c0-1.057.318-1.874.954-2.45.636-.576 1.423-.864 2.365-.864 1.127 0 1.748.485 2.074 1.455h3.674c.326-.97 1.002-1.455 2.074-1.455.942 0 1.729.288 2.365.864.636.576.954 1.393.954 2.45v4.664c0 1.057-.318 1.874-.954 2.45zM8.324 8.799c-.71 0-1.157-.462-1.285-1.385l-.261-1.687h-1.63v4.664c0 .386-.145.62-.435.702l-1.687-.41c.217.47.458.857.725 1.166l1.246 1.426-1.53.078c.366.52.793.916 1.284 1.185l.812 1.714c.257-.103.453-.254.587-.453l.666-1.025c.318-.485.477-1.14.477-1.968V8.799zm7.352 0v4.664c0 .828.159 1.483.477 1.968l.666 1.025c.134.199.32.35.587.453l.812-1.714c.491-.269.918-.665 1.284-1.185l-1.53-.078 1.246-1.426c.267-.31.508-.696.725-1.166l-1.687.41c-.29-.082-.435-.316-.435-.702V5.727h-1.63l-.261 1.687c-.128.923-.575 1.385-1.285 1.385z"/></svg>
+                </a>
+            </div>
+            
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-20 py-8 text-center bg-gray-950 border-t border-cyan-800/30">
+        <p class="text-sm text-gray-500">&copy; 2025 Junior Collins. Engineered with <span class="text-cyan-500">Code</span> and Tailwind CSS.</p>
+    </footer>
+
+    <script>
+        // --- JavaScript for Interactivity ---
+
+        // 1. Typewriter Effect
+        const phrases = [
+            "Full-Stack Developer.",
+            "Architect of Digital Experiences.",
+            "Building the Future, One Line at a Time.",
+            "Eager to Innovate."
+        ];
+        const typingElement = document.getElementById('typewriter-text');
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeWriter() {
+            const currentPhrase = phrases[phraseIndex];
+            let displayString = currentPhrase.substring(0, charIndex);
+
+            if (!isDeleting) {
+                // Typing forward
+                charIndex++;
+                if (charIndex > currentPhrase.length) {
+                    isDeleting = true;
+                    // Pause at the end of the phrase
+                    setTimeout(typeWriter, 1500); 
+                    return;
+                }
+            } else {
+                // Deleting
+                charIndex--;
+                if (charIndex < 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    // Pause before starting the next phrase
+                    setTimeout(typeWriter, 500);
+                    return;
+                }
+            }
+
+            typingElement.textContent = displayString;
+            
+            // Set speed (faster typing, slower deleting)
+            const typeSpeed = isDeleting ? 50 : 100;
+            setTimeout(typeWriter, typeSpeed);
+        }
+
+        // Start the typewriter effect
+        window.onload = function() {
+            // Wait a moment for the initial load feel
+            setTimeout(typeWriter, 500);
+
+            // Set up mobile menu listener
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Set up contact form listener
+            const contactForm = document.getElementById('contact-form');
+            const formMessage = document.getElementById('form-message');
+
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Simulate form submission success
+                formMessage.classList.remove('hidden');
+                formMessage.classList.remove('text-red-400');
+                formMessage.classList.add('text-green-400', 'p-3', 'bg-green-900/50', 'rounded-lg');
+                formMessage.innerHTML = '✨ **Success!** Your message has been sent. Junior will be in touch soon!';
+                
+                // Reset form after a small delay
+                contactForm.reset();
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    formMessage.classList.add('hidden');
+                }, 5000);
+            });
+        };
+    </script>
+</body>
+</html>
